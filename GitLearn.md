@@ -820,6 +820,8 @@ $ git remote
 $ git remote -v
 ```
 
+### 17.1 推送分支
+
 推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：
 
 ```
@@ -840,3 +842,26 @@ $ git push origin dev
 - feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
 
 总之，就是在Git中，分支完全可以在本地自己藏着玩，是否推送，视你的心情而定！
+
+### 17.2 抓取分支
+
+多人协作时，大家都会往`master`和`dev`分支上推送各自的修改。
+
+现在，模拟一个你的小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆：
+
+```
+git clone https://github.com/Cjvaely/gitskills_2020.git
+```
+
+当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的`master`分支。不信可以用`git branch`命令看看：
+
+![image-20200215165233478](/Users/cjv/Library/Application Support/typora-user-images/image-20200215165233478.png)
+
+现在，你的小伙伴要在`dev`分支上开发，就必须创建远程`origin`的`dev`分支到本地，于是他用这个命令创建本地`dev`分支：
+
+```
+git checkout -b dev origin/dev
+```
+
+![image-20200215165428701](/Users/cjv/Library/Application Support/typora-user-images/image-20200215165428701.png)
+
