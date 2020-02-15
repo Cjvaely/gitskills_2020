@@ -911,3 +911,5 @@ $ git push origin dev
 如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to  origin/`。
 
 这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
+测试一下！
