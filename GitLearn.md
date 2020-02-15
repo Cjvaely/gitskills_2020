@@ -865,3 +865,28 @@ git checkout -b dev origin/dev
 
 ![image-20200215165428701](/Users/cjv/Library/Application Support/typora-user-images/image-20200215165428701.png)
 
+现在，他就可以在`dev`上继续修改，然后，时不时地把`dev`分支`push`到远程：
+
+```
+$ git add env.txt
+$ git commit -m "add env"
+$ git push origin dev
+```
+
+你的小伙伴已经向`origin/dev`分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送：
+
+```
+$ cat env.txt
+$ git add env.txt
+$ git commit -m "add new env"
+$ git push origin dev
+```
+
+![image-20200215170850612](/Users/cjv/Library/Application Support/typora-user-images/image-20200215170850612.png)
+
+推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用`git pull`把最新的提交从`origin/dev`抓下来，然后，在本地合并，解决冲突，再推送：
+
+```
+$ git pull
+
+```
